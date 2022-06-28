@@ -1,1 +1,1 @@
-console.log("hello world")
+let button = document.getElementById("button");

@@ -7,9 +7,24 @@ body {
 }
 
 .main-container {
-    background-color: aqua;
+    background-color: #202121;
     border: 2px solid black;
     border-radius: 18px;
-    height: 80vh;
-    width: 30vw;
+    height: 85%;
+    width: 30%;
+}
+
+.screen {
+    border: 1px solid black;
+    border-radius: 9px;
+    background-color: #e5e5e5;
+    margin: 10px;   
+    height: 6rem;
+}
+
+.previous-screen {
+    border: .5px solid black;
+    background-color: #e5e5e5;
+    margin: 5px 0px;
+    height: 40%;
 }
