@@ -4,27 +4,90 @@ body {
     align-items: center;
     width: 100vw;
     height: 100vh;
+    font-family: 'Roboto', sans-serif;
 }
 
 .main-container {
-    background-color: #202121;
-    border: 2px solid black;
+    background-color: #1C1C1C;
+    /* border: 2px solid black; */
     border-radius: 18px;
-    height: 85%;
-    width: 30%;
+    height: 800px;
+    width: 550px;
 }
 
 .screen {
-    border: 1px solid black;
-    border-radius: 9px;
-    background-color: #e5e5e5;
-    margin: 10px;   
-    height: 6rem;
+    /* border: 1px solid black; */
+    border-radius: 24px;
+    background-color: white;
+    color: #1C1C1C;;
+    margin: 30px;
+    height: 9rem;
+    overflow: auto;
 }
 
 .previous-screen {
-    border: .5px solid black;
-    background-color: #e5e5e5;
-    margin: 5px 0px;
-    height: 40%;
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 30%;
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.current-screen {
+    /* border: .5px solid black; */
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50%;
+    margin: 0px 15px;
+    text-align: center;
+    font-size: 36px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    justify-content: center;
+    align-content: center;
+    height: 70%;
+    margin: 30px;
+    gap: 15px;
+}
+
+button {
+    font-size: 24px;
+    color: white;
+    border-radius: 36px;
+    border: 1px solid black;
+}
+
+button:active {
+    transform: translateY(3px);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+.span-three {
+    grid-column: span 3;
+}
+
+[data-number] {
+    background-color: #505050;
+}
+
+[data-del],
+[data-clear] {
+    color: black;
+    background-color: #D4D4D2;
+}
+
+[data-equals],
+[data-operation] {
+    background-color: #FF9500;
 }
