@@ -11,8 +11,10 @@ body {
     background-color: #1C1C1C;
     /* border: 2px solid black; */
     border-radius: 18px;
-    height: 85vh;
-    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    height: clamp(400px, 800px, 900px);
+    width: clamp(150px, 550px, 650px);
 }
 
 .screen {
