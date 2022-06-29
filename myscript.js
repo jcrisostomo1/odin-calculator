@@ -7,6 +7,7 @@ const screen = document.querySelector(".current-screen");
 const prevScreen = document.querySelector(".previous-screen");
 
 let firstNum = 0;
+let operand = "";
 
 let clear = () => {
     screen.innerText = '';
@@ -17,17 +18,18 @@ let _delete = () => {
     screen.innerText = screen.innerText.slice(0,-1);
 }
 
-let updateDisplay = () => {
+let updateDisplay = (e) => {
+    operand = e.target.innerText;
     firstNum = screen.innerText;
     prevScreen.innerText = screen.innerText;
     screen.innerText = '';
 }
 
-clearButton.addEventListener('click', clear);
-deleteButton.addEventListener('click' , _delete);
-equalsButton.addEventListener('click', () => {
-    console.log(typeof(firstNum))
-})
+let doOperation = (e) => {
+    console.log(operand + typeof(operand));
+    prevScreen.innerText = "";
+    screen.innerText = operate(parseInt(firstNum), parseInt(screen.innerText), operand);
+}
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -39,22 +41,27 @@ operationButtons.forEach(button => {
     button.addEventListener('click', updateDisplay);
 });
 
-let add = (num1,num2) => (num1 + num2);
-let subtract = (num1, num2) => (num1- num2);
-let multiply = (num1, num2) => (num1 * num2);
-let divide = (num1, num2) => (num1/num2); 
+clearButton.addEventListener('click', clear);
+deleteButton.addEventListener('click' , _delete);
+equalsButton.addEventListener('click', doOperation);
+
+const add = (num1,num2) => (num1 + num2);
+const subtract = (num1, num2) => (num1- num2);
+const multiply = (num1, num2) => (num1 * num2);
+const divide = (num1, num2) => (num1/num2); 
 
 let operate = (num1, num2, operator) => {
     let answer;
     switch (operator) {
-        case "add" :
+        case "+" :
             return add(num1, num2);
-        case "subtract" :
+        case "−" :
             return subtract(num1, num2);
-        case "multiply" :
+        case "×" :
             return multiply(num1, num2);
-        case "divide" :
+        case "÷" :
             return divide(num1, num2);
-    }
-    return
+        default :
+            return "Error!"
+    }   
 }
