@@ -26,9 +26,8 @@ let updateDisplay = (e) => {
 }
 
 let doOperation = (e) => {
-    console.log(operand + typeof(operand));
-    prevScreen.innerText = "";
-    screen.innerText = operate(parseInt(firstNum), parseInt(screen.innerText), operand);
+    prevScreen.innerText += ` ${operand} ${screen.innerText}`;
+    screen.innerText = operate(parseFloat(firstNum), parseFloat(screen.innerText), operand);
 }
 
 numberButtons.forEach(button => {
