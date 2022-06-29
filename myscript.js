@@ -2,10 +2,11 @@ const numberButtons = document.querySelectorAll("[data-number]");
 const operationButtons = document.querySelectorAll("[data-operation]");
 const clearButton = document.querySelector("[data-clear]");
 const deleteButton = document.querySelector("[data-delete]");
-// const divideButton =  document.querySelector('[data-divide]');
-// const multiplyButton = document.querySelector('[data-times]');
+const equalsButton = document.querySelector("[data-equals]");
 const screen = document.querySelector(".current-screen");
 const prevScreen = document.querySelector(".previous-screen");
+
+let firstNum = 0;
 
 let clear = () => {
     screen.innerText = '';
@@ -17,13 +18,16 @@ let _delete = () => {
 }
 
 let updateDisplay = () => {
-    let firstNum = screen.innerText;
-    prevScreen.innerText = firstNum;
+    firstNum = screen.innerText;
+    prevScreen.innerText = screen.innerText;
     screen.innerText = '';
 }
 
 clearButton.addEventListener('click', clear);
-deleteButton.addEventListener('click' , _delete)
+deleteButton.addEventListener('click' , _delete);
+equalsButton.addEventListener('click', () => {
+    console.log(typeof(firstNum))
+})
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -32,8 +36,8 @@ numberButtons.forEach(button => {
 });
 
 operationButtons.forEach(button => {
-    button.addEventListener('click', updateDisplay)
-})
+    button.addEventListener('click', updateDisplay);
+});
 
 let add = (num1,num2) => (num1 + num2);
 let subtract = (num1, num2) => (num1- num2);
