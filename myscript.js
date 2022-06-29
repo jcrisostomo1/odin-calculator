@@ -83,30 +83,3 @@ let operate = (num1, num2, operator) => {
             return "Error!"
     }   
 }
-
-// KEYBOARD SUPPORT! 
-// document.addEventListener('keydown', (e) => {
-//     let numbers = /\d+/
-//     let operators = /[+−×÷]/
-//     if (numbers.test(e.key)){
-//         screen.innerText += e.key;
-//     }
-//     if(e.key == "Backspace") {
-//         _delete();
-//     }
-//     if (operators.test(e.key)) {
-//         doOperation()
-//         operand = e.key;
-//     if (screen.innerText != '') {
-//         firstNum = screen.innerText;
-//         prevScreen.innerText += `${firstNum}${operand}`;
-//         screen.innerText = '';
-//         } 
-//     }
-//     if (e.key="Enter") {
-//         doOperation();
-//     }
-//     else {
-//         console.log(e.key)
-//     }
-// });
