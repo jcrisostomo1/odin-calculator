@@ -1,8 +1,23 @@
 const numberButtons = document.querySelectorAll("[data-number]");
+const clearButton = document.querySelector("[data-clear]");
+const deleteButton = document.querySelector("[data-delete]");
 const divideButton =  document.querySelector('[data-divide]');
 const multiplyButton = document.querySelector('[data-times]');
 const screen = document.querySelector(".current-screen");
 const prevScreen = document.querySelector(".previous-screen");
+
+let clear = () => {
+    screen.innerText = '';
+    prevScreen.innerText = '';
+}
+
+let _delete = () => {
+    screen.innerText = screen.innerText.slice(0,-1);
+}
+
+
+clearButton.addEventListener('click', clear);
+deleteButton.addEventListener('click' , _delete)
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -34,5 +49,7 @@ let operate = (num1, num2, operator) => {
     }
     return
 }
+
+let updateDis
 
 console.log(operate(1,2, "add"))
