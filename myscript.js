@@ -7,7 +7,7 @@ const screen = document.querySelector(".current-screen");
 const prevScreen = document.querySelector(".previous-screen");
 
 let firstNum;
-let operand = "";
+let operand = '';
 
 let clear = () => {
     screen.innerText = '';
@@ -20,16 +20,23 @@ let _delete = () => {
     screen.innerText = screen.innerText.slice(0,-1);
 }
 
+let eval = () => {
+    if (firstNum != '' && operand != '') {
+        console.log(prevScreen.innerText)
+    }
+}
+
 let updateDisplay = (e) => {
+    doOperation()
     operand = e.target.innerText;
     if (screen.innerText != '') {
         firstNum = screen.innerText;
-        prevScreen.innerText = `${firstNum} ${operand}`;
+        prevScreen.innerText += `${firstNum}${operand}`;
         screen.innerText = '';
     }
 }
 
-let doOperation = (e) => {
+let doOperation = () => {
     if(operand != '' && !isNaN(firstNum) && !isNaN(parseFloat(screen.innerText))) {
         screen.innerText = operate(parseFloat(firstNum), parseFloat(screen.innerText), operand);
         prevScreen.innerText = '';
